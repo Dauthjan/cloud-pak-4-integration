@@ -1118,7 +1118,7 @@
                     "productInstallationScriptPath": {
                         "value": "[variables('productInstallationScriptPath')]"
                     },
-                    "_artifactsLocationSasToken": {
+                    "artifactsLocationSasToken": {
                         "value": "[parameters('_artifactsLocationSasToken')]"
                     },
                     "redHatTags": {
