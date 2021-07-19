@@ -176,12 +176,6 @@
                 "description": "Storage Account Name"
             }
         },
-        "storageAccountKey": {
-            "type": "string",
-            "metadata": {
-                "description": "(Optional) Storage Account Key"
-            }
-        },
         "emailAddress": {
             "type": "string",
             "metadata": {
@@ -213,7 +207,6 @@
                 },
                 "protectedSettings": {
                     "storageAccountName": "[parameters('storageAccountName')]",
-                    "storageAccountKey": "[parameters('storageAccountKey')]",
                     "commandToExecute": "[concat('curl -H \"Accept: application/vnd.github.v3+raw\"',' -o \"./', parameters('cloudPakDeploymentScriptFileName'), '\" -L \"', parameters('cloudPakDeploymentScriptUrl'), '\" && ', 'bash ', parameters('cloudPakDeploymentScriptFileName'), ' \"', parameters('adminUsername'), '\"', ' \"', parameters('ocpassword'), '\"', ' \"', parameters('projectName'), '\"', ' \"', parameters('storageOption'), '\"', ' \"', parameters('assembly'), '\"', ' \"', parameters('clusterName'), '\"', ' \"', parameters('domainName'), '\"', ' \"', parameters('ocuser'), '\"', ' \"', parameters('apiKey'), '\"', ' \"', parameters('platformNavigatorReplicas'), '\"', ' \"', parameters('capabilityAPIConnect'), '\"', ' \"', parameters('capabilityAPPConnectDashboard'), '\"', ' \"', parameters('capabilityAPPConenctDesigner'), '\"', ' \"', parameters('capabilityAssetRepository'), '\"', ' \"', parameters('capabilityOperationsDashboard'), '\"', ' \"', parameters('runtimeMQ'), '\"', ' \"', parameters('runtimeKafka'), '\"', ' \"', parameters('runtimeAspera'), '\"', ' \"', parameters('runtimeDataPower'), '\"', ' \"', parameters('primaryScriptPath'), '\"', ' \"', parameters('productInstallationScriptPath'), '\"', ' \"', parameters('artifactsLocationSasToken'), '\"', ' \"', parameters('storageAccountName'), '\"', ' \"', parameters('emailAddress'), '\"', ' \"', parameters('cloudPakVersion'), '\"')]"
                 }
             }
