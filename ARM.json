@@ -299,12 +299,6 @@
                 "description": "Give a unique name for storage account"
             }
         },
-        "storageAccountKey": {
-            "type": "string",
-            "metadata": {
-                "description": "(optional, string) the access key of storage account"
-            }
-        },
         "accountType": {
             "type": "string",
             "metadata": {
@@ -995,7 +989,6 @@
                 },
                 "protectedSettings": {
                     "storageAccountName": "[parameters('storageAccountName')]",
-                    "storageAccountKey": "[parameters('storageAccountKey')]",
                     "commandToExecute": "[concat('curl -H \"Accept: application/vnd.github.v3+raw\"',' -o \"./', variables('nfsInstallScriptFileName'), '\" -L \"', variables('nfsInstallScriptUrl'), '\" && ', 'bash ', variables('nfsInstallScriptFileName'))]"
                 }
             },
@@ -1053,7 +1046,6 @@
                 },
                 "protectedSettings": {
                     "storageAccountName": "[parameters('storageAccountName')]",
-                    "storageAccountKey": "[parameters('storageAccountKey')]",
                     "commandToExecute": "[concat('curl -H \"Accept: application/vnd.github.v3+raw\"',' -o \"./', variables('cloudPakConfigScriptFileName'), '\" -L \"', variables('cloudPakConfigScriptUrl'), '\" && ', 'bash ', variables('cloudPakConfigScriptFileName'), ' \"', uri(parameters('_artifactsLocation'), '.'), '\"', ' \"', parameters('_artifactsLocationSasToken'), '\"', ' \"', parameters('adminUsername'), '\"', ' \"', parameters('workerInstanceCount'), '\"', ' \"', parameters('projectName'), '\"', ' \"', parameters('apiKey'), '\"', ' \"', parameters('enableFips'), '\"')]"
                 }
             },
@@ -1189,9 +1181,6 @@
                     },
                     "storageAccountName": {
                         "value": "[parameters('storageAccountName')]"
-                    },
-                    "storageAccountKey": {
-                        "value": "[parameters('storageAccountKey')]"
                     },
                     "emailAddress": {
                         "value": "[parameters('emailAddress')]"
